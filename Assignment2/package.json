@@ -1,0 +1,14 @@
+{
+  "name": "assignment2",
+  "version": "1.0.0",
+  "description": "Mean game Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Betelhem Mengesha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
