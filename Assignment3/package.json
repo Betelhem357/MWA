@@ -1,12 +1,13 @@
 {
-  "name": "assignment2",
+  "name": "assignment3",
   "version": "1.0.0",
-  "description": "Mean game Application",
+  "description": "Games App with database",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Betelhem Mengesha",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
