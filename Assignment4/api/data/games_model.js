@@ -4,10 +4,6 @@ const publisherSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true
-    },
-
-    location:{//longitude and latitude
-        address:String
     }
 });
 
