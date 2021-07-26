@@ -1,15 +1,8 @@
 const mongoose = require("mongoose");
 
-const Singer = new mongoose.Schema({
-    name:String,
-    country:String,
-    totalPrize:Number
-});
-
 const Music = new mongoose.Schema({
     name:String,
-    year:Number,
-    singer:Singer
+    year:Number
 });
 
 const Instrument = new mongoose.Schema({
