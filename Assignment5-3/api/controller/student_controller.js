@@ -1,10 +1,16 @@
 const mongoose = require("mongoose");
 const Student = mongoose.model("student");
-
+const STATUSOK = process.env.STATUSOK;
+const STATUSCREATED = process.env.STATUSCREATED;
+const STATUSNOCONTENT = process.env.STATUSNOCONTENT;
+const INVALIDREQUEST = process.env.INVALIDREQUEST;
+const NOTFOUND = process.env.NOTFOUND;
+const INTERNALSERVERERROR = process.env.INTERNALSERVERERROR;
 
 module.exports.getAllStudents = function(req,res){
     let offset = 0;
     let count = 5;
+    let maxValue = 7;
     const response ={
         status:200,
         message:""
@@ -25,6 +31,10 @@ module.exports.getAllStudents = function(req,res){
         return;
     }
 
+    if(count>maxValue){
+        count = 5;
+    }
+
     Student.find().skip(offset).limit(count).exec(function(error,students){
         if(error){
             response.status = 500;
@@ -41,14 +51,14 @@ module.exports.getStudentById = function(req,res){
     const studentId = req.params.studentId;
     Student.findById(studentId).exec(function(error,studentData){
         const response ={
-            status:200,
+            status:STATUSOK,
             message:studentData
         };
         if(error){
-            response.status = 500;
+            response.status = INTERNALSERVERERROR;
             response.message = error;
         }else if(!studentData){
-            response.status = 404;
+            response.status = NOTFOUND;
             response.message =  "Student with Id "+studentId+" not found!";
         }
          res.status( response.status).json(response.message);
@@ -98,20 +108,20 @@ module.exports.updatePartialOneStudent = (req,res)=>{
     Student.findById(studentId).exec(function(error,studentData){
         console.log(studentData.name)
         const response ={
-            status:204,
+            status:STATUSNOCONTENT,
             message:studentData
         };
         if(error){
-            response.status = 500;
+            response.status = INTERNALSERVERERROR;
             response.message = error;
         }else if(!studentData){
-            response.status = 404;
+            response.status = NOTFOUND;
             response.message =  "Game with Id "+studentId+" not found!";
             res.status( response.status).json(response.message);
             return;
         }
 
-        if(response.status!==204){
+        if(response.status!==STATUSNOCONTENT){
             res.status(response.status).json(response.message);
             return;
         }else{
@@ -120,7 +130,7 @@ module.exports.updatePartialOneStudent = (req,res)=>{
 
              studentData.save(function(error,updated_student){
                   if(error){
-                      response.status = 500;
+                      response.status = INTERNALSERVERERROR;
                       response.message = error;
                   }else{
                       response.message = updated_student;
