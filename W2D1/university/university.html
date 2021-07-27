@@ -1,0 +1,12 @@
+<!-- <ul>
+    <li ng-repeat="university in universityCtrl.universities">{{university.name}}<BR />
+        {{university.web_pages}}
+    </li>
+</ul> -->
+
+<h1>Universities found in {{universityCtrl.country}}</h1>
+
+<div class="universityDetail" ng-repeat="university in universityCtrl.universities">
+    University Name : {{university.name}}<BR />
+    Web Page of University: {{university.web_pages}}
+</div>
