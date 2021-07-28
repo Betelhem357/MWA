@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="meanGames">
+<html lang="en" ng-app="instrumentsApp">
 
 <head>
-    <title>MEAN Games</title>
+    <title>Traditional Instruments</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body>
-    <h1>Mean games homepage.</h1>
+    <h1>Traditional Instruments.</h1>
     <div ng-view></div>
     <footer class="footer">
         <div class="container">
             <p class="text-mutedtext-center"></p>
         </div>
-        <a href="https://compro.miu.edu" target="_blank"><img src="images/image.jpg" height="60" alt="Mean game"></a>
+        <a href="https://compro.miu.edu" target="_blank"><img src="images/instruments.jpg" height="60" alt="instruments"></a>
         <br />
         <small class="textblack-50 text-center">&copy;
             2021 Maharishi International
@@ -23,14 +23,13 @@
         </p>
 
     </footer>
-    <script src="jquery/jquery3.5.1.min.js"> </script>
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-route/angular-route.js"></script>
     <script src="angularjs-app/app.js"></script>
-    <script src="angularjs-app/gameFactory/games-factory.js"></script>
-    <script src="angularjs-app/game-list/game-list-controller.js"></script>
-    <script src="angularjs-app/game-display/game-display-controller.js"></script>
-    <script src="angularjs-app/gameRatingDirective/gameRatingDirective.js"></script>
+    <script src="angularjs-app/instrumentFactory/instrumentFactory.js"></script>
+    <script src="angularjs-app/instrumentList/instrumentListController.js"></script>
+    <script src="angularjs-app/instrumentDetail/instrumentDetailController.js"></script>
+    <script src="angularjs-app/catagoryDirective/catagoryDirective.js"></script>
 </body>
 
 </html>
