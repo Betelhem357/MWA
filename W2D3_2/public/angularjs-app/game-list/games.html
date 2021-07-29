@@ -1,0 +1,21 @@
+{{gameCtrl.title}}
+<ul>
+    <li ng-repeat="game in gamesCtrl.games"><a href="/#!/games/{{game._id}}">{{game.title}}</a><a href="/#!/games/update/{{game._id}}" style="color: green;">Update</a>
+        <button class="btn btn-danger" ng-click="gamesCtrl.removeGame(game._id)">Remove</button>
+</ul>
+
+<form name="gamesCtrl.gameForm" ng-submit="gamesCtrl.addGame()">
+    fill the form to add new game:<br/>
+    Title: <input type="text" name="title" required ng-model="gamesCtrl.newGameForm.title" style="color: black;"/><br/>
+    Price: <input type="text" name="price" required ng-model="gamesCtrl.newGameForm.price" style="color: black;"  /><br/>
+    Year: <input type="text" name="year" required ng-model="gamesCtrl.newGameForm.year" style="color: black;"  /><br/>
+    Rating: <input type="text" name="rate"  pattern="[1-5]" required ng-model="gamesCtrl.newGameForm.rate" style="color: black;" />
+    <span ng-show="gamesCtrl.gameForm.rate.$dirty && gamesCtrl.gameForm.rate.$invalid">The rate must be in between 1 and 5</span><br/>
+    {{gamesCtrl.gameForm.rate.$dirty}}<br/>
+    Minimum Players: <input type="text" name="minPlayers" required ng-model="gamesCtrl.newGameForm.minPlayers" pattern="[1-9][0-9]?" style="color: black;"  />
+    <span ng-show="gamesCtrl.gameForm.minPlayers.$dirty && gamesCtrl.gameForm.minPlayers.$invalid">The Minimum player must be in between 1-99</span><br/>
+    Maximum Players: <input type="text" name="maxPlayer" required ng-model="gamesCtrl.newGameForm.maxPlayers" style="color: black;"  /><br/>
+    Minimum Age: <input type="text" name="minAge" required ng-model="vm.newGameForm.minAge" style="color: black;"  /><br/>
+    Designer Name: <input type="text" name="DesignerName" required ng-model="gamesCtrl.newGameForm.DesignerName" style="color: black;"  /><br/>
+    <button type="submit" class="btn-success">Add game</button>
+</form>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="instrumentsApp">
+
+<head>
+    <title>Traditional Instruments</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Traditional Instruments.</h1>
+    <div ng-view></div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-mutedtext-center"></p>
+        </div>
+        <a href="https://compro.miu.edu" target="_blank"><img src="images/instruments.jpg" height="60" alt="instruments"></a>
+        <br />
+        <small class="textblack-50 text-center">&copy;
+            2021 Maharishi International
+            University. All Rights Reserved.
+        </small>
+        </p>
+
+    </footer>
+    <script src="lib/common/bootstrap.min.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="angularjs-app/app.js"></script>
+    <script src="angularjs-app/instrumentFactory/instrumentFactory.js"></script>
+    <script src="angularjs-app/instrumentList/instrumentListController.js"></script>
+    <script src="angularjs-app/instrumentDetail/instrumentDetailController.js"></script>
+    <script src="angularjs-app/catagoryDirective/catagoryDirective.js"></script>
+    <script src="angularjs-app/instrumentUpdate/instrumentUpdateController.js"></script>
+
+</body>
+
+</html>
