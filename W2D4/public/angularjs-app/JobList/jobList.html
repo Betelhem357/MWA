@@ -1,0 +1,4 @@
+<ul>
+    <li ng-repeat="job in jobCtrl.jobs"><a href="/#!/jobs/{{job._id}}">{{job.title}}</a> 
+</ul>
+<button type="submit" class="btn-success" ng-click="jobCtrl.goToAddPage()">Add new Job</button>

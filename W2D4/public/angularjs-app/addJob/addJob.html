@@ -1,0 +1,8 @@
+<form name="jobAddCtrl.jobForm" ng-submit="jobAddCtrl.addjob()">
+    Title: <input type="text" name="title" required ng-model="jobAddCtrl.job.title" style="color: black;" /><br />
+    description: <input type="text" name="description" required ng-model="jobAddCtrl.job.description" style="color: black;" /><br />
+    exprience: <input type="text" name="exprience" required ng-model="jobAddCtrl.job.exprience" style="color: black;" /><br />
+    salary: <input type="number" name="salary" required ng-model="jobAddCtrl.job.salary" style="color: black;" /><br />
+    postDate: <input type="date" name="postDate" required ng-model="jobAddCtrl.job.postDate" style="color: black;" /><br />
+    <button type="submit" class="btn-success">Add job</button>
+</form>

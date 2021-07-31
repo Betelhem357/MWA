@@ -1,0 +1,10 @@
+<h1>Detail on Job {{jobDetailCtrl.job.title}}</h1>
+<p>
+    Title:  {{jobDetailCtrl.job.title}} <br/>
+    description:  {{jobDetailCtrl.job.description}} <br/>
+    salary:  {{jobDetailCtrl.job.salary | currency}} <br/>
+    exprience:  {{jobDetailCtrl.job.exprience}} <br/>
+    postDate:  {{jobDetailCtrl.job.postDate | date : 'short'}} <br/>
+    <button ng-click="jobDetailCtrl.goToUpdatePage()" class="btn-success">Edit</button> </li>
+    <button ng-click="jobDetailCtrl.removeJob()" class="btn-danger">delete</button> </li>
+</p>
