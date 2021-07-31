@@ -27,6 +27,11 @@ module.exports.getAllJobs = function (req, res) {
         return;
     }
 
+    if (req.query && req.query.lat && req.query.lng) {
+        getSearchByLocation(req, res);
+        return;
+    }
+
     if (count > maxValue) {
         response.status(400).json({ message: "count can't exceed maximum value: " + maxValue });
     }
@@ -164,11 +169,12 @@ module.exports.getJobById = function (req, res) {
 }
 module.exports.createJob = function (req, res) {
     console.log("creating Job");
-    bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(req.body.salary, salt, (err, hasedSalary) => {
+    // bcrypt.genSalt(10, (err, salt) => {
+    //     bcrypt.hash(req.body.salary, salt, (err, hasedSalary) => {
             const newJob = {};
             newJob.title = req.body.title;
-            newJob.salary = hasedSalary;
+            //newJob.salary = hasedSalary;
+            newJob.salary = parseFloat(req.body.salary);
             newJob.description = req.body.description;
             newJob.exprience = req.body.exprience;
             newJob.skills = req.body.skills;
@@ -188,8 +194,8 @@ module.exports.createJob = function (req, res) {
                 res.status(response.status).json(response.message);
 
             });
-        })
-    })
+       // })
+    //})
 }
 module.exports.partialUpdateJob = function (req, res) {
     console.log("Partial update Job");

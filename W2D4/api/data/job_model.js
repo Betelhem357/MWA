@@ -9,10 +9,14 @@ const review = new mongoose.Schema({
 const location = new mongoose.Schema({
     address:String,
     coordinates: {
-        type: [Number],
-        index: "2dsphere"
-    }        
+        type: { type: String },
+        location: {
+            type: { type: String },
+            coordinates: []
+           }
+    }       
 });
+location.index({ location: "2dsphere" }); 
 
 const job = new mongoose.Schema({
     title:String,
