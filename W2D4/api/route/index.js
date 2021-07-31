@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const jobController = require("../api/controller/jobController");
-const locationController = require("../api/controller/locationController");
-const reviewController = require("../api/controller/reviewController");
+const jobController = require("../controller/jobController");
+const locationController = require("../controller/locationController");
+const reviewController = require("../controller/reviewController");
 
 router.route("/jobs")
       .get(jobController.getAllJobs)
