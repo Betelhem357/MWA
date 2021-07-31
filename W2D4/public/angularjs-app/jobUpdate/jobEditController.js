@@ -1,6 +1,6 @@
 angular.module("jobApp").controller("jobEditController",jobEditController);
 
-function jobEditController(JobFactory,$routeParams){
+function jobEditController(JobFactory,$routeParams,$location){
     vm = this;
     vm.job = {};
    const jobId = $routeParams.jobId;
@@ -10,6 +10,8 @@ function jobEditController(JobFactory,$routeParams){
    });
    vm.updatejob = function(){
        console.log("update",vm.job)
-       JobFactory.updatejob(jobId,vm.job);
+       JobFactory.updatejob(jobId,vm.job).then(function(){
+           $location.path("/");
+       });
    }
 }

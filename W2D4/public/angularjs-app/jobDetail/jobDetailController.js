@@ -12,7 +12,8 @@ function jobDetailController(JobFactory,$routeParams,$location){
     $location.path("/job/Update/"+jobId);
    }
    vm.removeJob = function(){
-    JobFactory.removeJob(jobId);
-    $location.path("/");
+    JobFactory.removeJob(jobId).then(function(){
+        $location.path("/");
+    });
    } 
 }

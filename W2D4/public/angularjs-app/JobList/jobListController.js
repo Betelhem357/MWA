@@ -6,6 +6,7 @@ function jobListController(JobFactory,$location){
 
     JobFactory.getAllJobs().then(function(response){
         vm.jobs = response.data;
+        console.log(vm.jobs);
     });
 
     vm.addjob = function(){

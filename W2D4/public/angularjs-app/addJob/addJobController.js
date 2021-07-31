@@ -6,7 +6,8 @@ function addJobController(JobFactory,$location){
 
     vm.addjob = function(){
         console.log(vm.job);
-        JobFactory.addNewJob(vm.job);
-        $location.path("/");
+        JobFactory.addNewJob(vm.job).then(function(){
+            $location.path("/");
+        });
     }
 }

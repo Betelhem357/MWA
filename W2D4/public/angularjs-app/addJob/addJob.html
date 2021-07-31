@@ -1,12 +1,3 @@
-<form >
-    Title: <br />
-    description:<br />
-    exprience: <br />
-    salary: <br />
-    postDate: <br />
-    
-</form>
-
 <form class="form-horizontal" name="jobAddCtrl.jobForm" ng-submit="jobAddCtrl.addjob()">
     Fill the form to add instrument<br/>
     <div class="form-group">
@@ -28,14 +19,14 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="salary" class="col-sm-2 control-label">rank</label>
+        <label for="salary" class="col-sm-2 control-label">salary</label>
         <div class="col-sm-4">
-            <input type="number" name="salary" required ng-model="jobAddCtrl.job.salary" pattern="\d*\.?\d*[1-9]+\d*$)|(^[1-9]+\.?\d*" style="color: black;" />
+            <input type="number" name="salary" required ng-model="jobAddCtrl.job.salary" style="color: black;" />
         </div>
-        <span ng-show="jobAddCtrl.jobForm.salary.$dirty && jobAddCtrl.jobForm.salary.$invalid">The salary must be greater than 0</span>
+        <!-- <span ng-show="jobAddCtrl.jobForm.salary.$dirty && jobAddCtrl.jobForm.salary.$invalid">The salary must be greater than 0</span> -->
     </div>
     <div class="form-group">
-        <label for="postDate" class="col-sm-2 control-label">rank</label>
+        <label for="postDate" class="col-sm-2 control-label">postDate</label>
         <div class="col-sm-4">
             <input type="date" name="postDate" required ng-model="jobAddCtrl.job.postDate" style="color: black;" />
         </div>
