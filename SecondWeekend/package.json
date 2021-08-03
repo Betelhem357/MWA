@@ -1,0 +1,21 @@
+{
+  "name": "secondweekend",
+  "version": "1.0.0",
+  "description": "Second weekend Assignment. Adding Authentication to mean games application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-jwt": "^0.1.11",
+    "angular-route": "^1.8.2",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.5"
+  }
+}
