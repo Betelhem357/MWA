@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meanGames">
+
+<head>
+  <title>MEAN Games</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/tool.css" rel="stylesheet" />
+  <link href="css/tool_base.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- <h1>Mean games homepage.</h1> -->
+  <games-navigation></games-navigation>
+  <div ng-view class="container" style="padding: 100px;"></div>
+  <games-footer></games-footer>
+  <script src="jquery/jquery3.5.1.min.js"> </script>
+  <script src="/node_modules/angular/angular.js"></script>
+  <script src="/node_modules/angular-route/angular-route.js"></script>
+  <script src="/node_modules/angular-jwt/dist/angular-jwt.js"></script>
+  <script src="angularjs-app/app.js"></script>
+  <script src="angularjs-app/gameFactory/games-factory.js"></script>
+  <script src="angularjs-app/game-list/game-list-controller.js"></script>
+  <script src="angularjs-app/gameUpdate/gameUpdateController.js"></script>
+  <script src="angularjs-app/game-display/game-display-controller.js"></script>
+  <script src="angularjs-app/login/login_controller.js"></script>
+  <script src="angularjs-app/gameRatingDirective/gameRatingDirective.js"></script>
+  <script src="angularjs-app/authentication/authFactory.js"></script>
+  <script src="angularjs-app/authentication/authInterceptor.js"></script>
+  <script src="angularjs-app/directives/footer/footer.js"></script>
+  <script src="angularjs-app/directives/navigation/navigation.js"></script>
+  <script src="angularjs-app/gameFactory/userFactory.js"></script>
+  <script src="angularjs-app/register/register_controller.js"></script>
+</body>
+
+</html>

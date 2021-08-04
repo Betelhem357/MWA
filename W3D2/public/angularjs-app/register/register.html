@@ -1,0 +1,22 @@
+<h1>Register</h1>
+
+<div ng-if="vm.err" class="alert alert-danger" role="alert">{{vm.err}}
+</div>
+<div ng-if="vm.success" class="success alert-success" role="alert">{{vm.success}}
+</div>
+
+<form name="regForm" ng-submit="vm.register()">
+    <div class="form-group">
+        <label for="username">User Name</label>
+        <input type="text" class="form-control" id="username" placeholder="Username" ng-model="vm.formdata.username" autocapitalize="none"/>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="pass" placeholder="password" ng-model="vm.formdata.password" autocapitalize="none"/>
+    </div>
+    <div class="form-group">
+        <label for="repeat-password">Repeat Password</label>
+        <input type="password" class="form-control" id="repeat-password" placeholder="password" ng-model="vm.repeatPassword" autocapitalize="none"/>
+    </div>
+    <button ng-disabled="regForm.$dirty && regForm.$invalid" type="submit" class="btn-success">Register</button>
+</form>

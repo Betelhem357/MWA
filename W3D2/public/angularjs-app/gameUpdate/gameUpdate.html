@@ -1,0 +1,18 @@
+<h1><p>{{gameUpdateCtrl.game.title}}</p></h1>
+<form name="gameUpdateCtrl.gameForm" ng-submit="gameUpdateCtrl.updateGame()">
+    fill the form to add new game:<br/>
+    Title: <input type="text" name="title" required ng-model="gameUpdateCtrl.game.title" style="color: black;"/><br/>
+    Price: <input type="text" name="price" required ng-model="gameUpdateCtrl.game.price" style="color: black;"  /><br/>
+    Year: <input type="text" name="year" required ng-model="gameUpdateCtrl.game.year" style="color: black;"  /><br/>
+    Rating: <input type="text" name="rate"  pattern="[1-5]" required ng-model="gameUpdateCtrl.game.rate" style="color: black;" />
+    <span ng-show="gameUpdateCtrl.gameForm.rate.$dirty && gameUpdateCtrl.gameForm.rate.$invalid">The rate must be in between 1 and 5</span><br/>
+    {{gameUpdateCtrl.gameForm.rate.$dirty}}<br/>
+    Minimum Players: <input type="text" name="minPlayers" required ng-model="gameUpdateCtrl.game.minPlayers" pattern="[1-9][0-9]?" style="color: black;"  />
+    <span ng-show="gameUpdateCtrl.gameForm.minPlayers.$dirty && gameUpdateCtrl.gameForm.minPlayers.$invalid">The Minimum player must be in between 1-99</span><br/>
+    Maximum Players: <input type="text" name="maxPlayer" required ng-model="gameUpdateCtrl.game.maxPlayers" style="color: black;"  /><br/>
+    Minimum Age: <input type="text" name="minAge" required ng-model="vm.game.minAge" style="color: black;"  /><br/>
+    Designer Name: <input type="text" name="DesignerName" required ng-model="gameUpdateCtrl.game.designers" style="color: black;"  /><br/>
+    <button type="submit" class="btn-success">Update Game</button>
+
+</form>
+
