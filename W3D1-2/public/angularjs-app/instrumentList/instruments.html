@@ -1,0 +1,35 @@
+{{instrumentsCtrl.title}}
+    <div ng-repeat="instrument in instrumentsCtrl.instruments" class="instrumList"><div></div><a href="/#!/instruments/{{instrument._id}}">{{instrument.name}}</a>
+    <a href="/#!/instruments/update/{{instrument._id}}" style="color: green;">Update</a> <button class="btn btn-danger" ng-click="instrumentsCtrl.removeInstrument(instrument._id)">Remove</button></div>
+
+<form name="instrumentsCtrl.instrumentForm" ng-submit="instrumentsCtrl.addInstrument()" class="form-horizontal">
+    Fill the form to add instrument<br/>
+    <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-4">
+            <input type="text" name="name" required ng-model="instrumentsCtrl.formInstrument.name" style="color: black;"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="country" class="col-sm-2 control-label">country</label>
+        <div class="col-sm-4">
+            <input type="text" name="country" required ng-model="instrumentsCtrl.formInstrument.country" style="color: black;"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="catagory" class="col-sm-2 control-label">catagory</label>
+        <div class="col-sm-4">
+            <input type="option" name="catagory" required ng-model="instrumentsCtrl.formInstrument.catagory" style="color: black;"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="rank" class="col-sm-2 control-label">rank</label>
+        <div class="col-sm-4">
+            <input type="text" name="rank" pattern="[1-9]" ng-model="instrumentsCtrl.formInstrument.rank" style="color: black;"/>
+        </div>
+    </div>
+    <br/>
+    <span ng-show="instrumentsCtrl.instrumentForm.rank.$dirty && instrumentsCtrl.instrumentForm.rank.$invalid">The Rank must be in between 1 and 10</span>
+    <button type="submit" class="btn-success">Add Instrument</button>
+
+</form>

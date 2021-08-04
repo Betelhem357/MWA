@@ -1,6 +1,6 @@
-angular.module("meanGames").controller("LoginController",LoginController)
+angular.module("instrumentsApp").controller("LoginController",LoginController)
 
-function LoginController(UserFactory,AuthFactory,$window,jwtHelper, $location){
+function LoginController(UserFactory,AuthFactory,$window,$location){
     const vm = this;
     vm.credential = {};
     vm.isLoggedIn = function(){

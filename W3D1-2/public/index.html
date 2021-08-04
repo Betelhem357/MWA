@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="instrumentsApp">
+
+<head>
+    <title>Traditional Instruments</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/tool_base.css" rel="stylesheet" />
+    <link href="css/tool.css" rel="stylesheet" />
+
+</head>
+
+<body>
+     <instruments-navigation></instruments-navigation> 
+    <div ng-view class="container" style="padding: 100px;"></div>
+    <instruments-footer></instruments-footer>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="angularjs-app/app.js"></script>
+    <script src="angularjs-app/instrumentFactory/instrumentFactory.js"></script>
+    <script src="angularjs-app/instrumentList/instrumentListController.js"></script>
+    <script src="angularjs-app/instrumentDetail/instrumentDetailController.js"></script>
+    <script src="angularjs-app/catagoryDirective/catagoryDirective.js"></script>
+    <script src="angularjs-app/instrumentUpdate/instrumentUpdateController.js"></script>
+    <script src="angularjs-app/authentication/authFactory.js"></script>
+    <script src="angularjs-app/authentication/authInterceptor.js"></script>
+    <script src="angularjs-app/directives/footer/footer.js"></script>
+    <script src="angularjs-app/directives/navigation/navigation.js"></script>
+    <script src="angularjs-app/register/register_controller.js"></script>
+    <script src="angularjs-app/login/login_controller.js"></script>
+    <script src="angularjs-app/instrumentFactory/userFactory.js"></script>
+
+</body>
+
+</html>
